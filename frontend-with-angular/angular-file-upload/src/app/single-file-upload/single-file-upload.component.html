@@ -1,0 +1,22 @@
+<br><br><br>
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+  <div fxFlex="25%">
+    Progress: {{loaded}}%
+    <mat-progress-bar mode="determinate" value="{{loaded}}"></mat-progress-bar>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Single File Upload</mat-card-title>
+        <mat-card-subtitle>
+          <input #fileInput type="file" (change)="selectFile($event)" style="display:none;" ngModel/>
+          <mat-form-field class="example-full-width" (click)="fileInput.click()">
+            <input matInput placeholder="Choose File"
+                   value="{{fileInput.value.substr(fileInput.value.lastIndexOf('\\')+1)}}">
+            <mat-icon matSuffix>folder_open</mat-icon>
+          </mat-form-field>
+          &nbsp;
+          <button mat-raised-button color="primary" (click)="upload()">Upload</button>
+        </mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>

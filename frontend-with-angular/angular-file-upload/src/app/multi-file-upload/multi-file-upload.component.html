@@ -1,0 +1,37 @@
+<br><br><br>
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+  <div fxFlex="25%">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Multiple File Upload</mat-card-title>
+        <mat-card-subtitle>
+          <span *ngIf="selectedFiles !== undefined">{{selectedFiles.length}} file(s) selected</span>
+        </mat-card-subtitle>
+        <mat-card-subtitle>
+          <input #fileInput type="file" (change)="selectFile($event)" style="display:none;" ngModel multiple/>
+          <mat-form-field class="example-full-width" (click)="fileInput.click()">
+            <input matInput placeholder="Choose Multiple Files"
+                   value="{{fileInput.value.substr(fileInput.value.lastIndexOf('\\')+1)}}">
+            <mat-icon matSuffix>folder_open</mat-icon>
+          </mat-form-field>
+          &nbsp;
+          <button mat-raised-button color="primary" (click)="upload()">Upload</button>
+        </mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+  <div fxFlex="25%">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title *ngIf="!showProgress">No Upload in Progress!</mat-card-title>
+        <mat-card-title *ngIf="showProgress">Files</mat-card-title>
+        <mat-card-subtitle *ngFor="let uploadedFile of uploadedFiles">
+          <mat-icon>insert_drive_file</mat-icon>
+          {{uploadedFile.name}} - {{uploadedFile.progress}}%
+          <mat-progress-bar mode="determinate" value="{{uploadedFile.progress}}"></mat-progress-bar>
+        </mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>
+

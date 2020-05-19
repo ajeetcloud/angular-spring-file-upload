@@ -1,0 +1,1 @@
+'angular-file-upload' has the frontend src code in angular 9.x to handle file upload and download.

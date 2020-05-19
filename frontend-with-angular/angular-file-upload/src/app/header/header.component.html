@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <h1>Angular Spring File I/O</h1>
+    &nbsp;&nbsp;
+    <div fxShow="true" fxHide.lt-md>
+      <a mat-button routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact: true}">
+        Single File Upload </a>
+      <a mat-button routerLinkActive="active" routerLink="/multi-upload"> Multi-File Upload </a>
+      <a mat-button routerLinkActive="active" routerLink="/download"> Download </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
