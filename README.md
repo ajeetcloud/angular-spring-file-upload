@@ -1,5 +1,7 @@
 # angular-spring-file-upload
-This repository contains the frontend as well as backend code for performing file-upload and download using Angular 9.x as frontend and Spring Boot as backend.
+This repository contains the frontend as well as backend code for performing file-upload and download using Angular 9.x as frontend and Spring Boot as backend.  
+
+Frontend source for Angular is present in "frontend-with-angular/angular-file-upload/src" and backend src for Spring Boot is present in "backend-with-spring-boot/spring-file-upload/"
 
 Step by Step instructions can be found below:-  
 https://javaninja.io/angular-9-spring-boot-rest-api-file-upload-with-progress-bar/
